@@ -35,8 +35,8 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Users deleteUser(int userId) throws Exception {
-        Users deletedUser = null;
+    public void deleteUser(int userId) throws Exception {
+        Users deletedUser;
         try {
             deletedUser = userRepository.findById(userId).orElse(null);
 
@@ -49,6 +49,5 @@ public class UserServiceImpl implements UserService {
         catch (Exception e) {
             throw e;
         }
-        return deletedUser;
     }
 }
