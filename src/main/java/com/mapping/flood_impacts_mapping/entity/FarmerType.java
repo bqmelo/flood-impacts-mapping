@@ -3,27 +3,27 @@ package com.mapping.flood_impacts_mapping.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="tipo_usuario")
-public class UserType {
+@Table(name="tipo_agricultor")
+public class FarmerType {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="IdTipoUsuario")
-    private int userTypeId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="IdTipoAgricultor")
+    private Integer farmerTypeId;
 
     @Column(name="Descricao", nullable=false)
     private String description;
 
-    public UserType() {
+    public FarmerType() {
         super();
     }
 
-    public int getUserTypeId() {
-        return userTypeId;
+    public int getFarmerTypeId() {
+        return farmerTypeId;
     }
 
-    public void setUserTypeId(int userTypeId) {
-        this.userTypeId = userTypeId;
+    public void setFarmerTypeId(int farmerTypeId) {
+        this.farmerTypeId = farmerTypeId;
     }
 
     public String getDescription() {

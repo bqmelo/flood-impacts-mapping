@@ -2,7 +2,6 @@ package com.mapping.flood_impacts_mapping.entity;
 
 import jakarta.persistence.*;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 @Entity
@@ -10,32 +9,32 @@ import java.util.Date;
 public class Users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="IdUsuario")
     private int userId;
 
-    @Column(name="Nome", nullable = false)
+    @Column(name="Nome", nullable=false)
     private String name;
 
-    @Column(name="Email", nullable = false, unique = true)
+    @Column(name="Email", nullable=false, unique = true)
     private String email;
 
-    @Column(name="Telefone", nullable = false)
+    @Column(name="Telefone", nullable=false)
     private String phoneNumber;
 
-    @Column(name="Senha", nullable = false)
+    @Column(name="Senha", nullable=false)
     private String password;
 
     @Column(name="IdTipoUsuario")
     private int userType;
 
-    @Column(name="Aprovado", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name="Aprovado", columnDefinition="BOOLEAN DEFAULT FALSE")
     private boolean isApproved;
 
-    @Column(name="DataCadastro", nullable = false, updatable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name="DataCadastro", nullable=false, updatable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date createdDate;
 
-    @Column(name="DataModificacao", nullable = false, columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Column(name="DataModificacao", nullable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date updatedDate;
 
     public Users() {

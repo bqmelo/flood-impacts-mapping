@@ -23,9 +23,4 @@ public class UserTypeImpl implements UserTypeService {
     public UserType createUserType(UserType userType) {
         return userTypeRepository.save(userType);
     }
-
-    @Override
-    public UserType updateUserType(UserType userType) {
-        return userTypeRepository.save(userType);
-    }
 }
