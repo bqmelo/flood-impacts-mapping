@@ -40,19 +40,6 @@ public class Users {
 
     public Users() {
         super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public Users(int userId, String name, String email, String phoneNumber, String password, int userType, boolean isApproved, Timestamp createdDate, Timestamp updatedDate) {
-        this.userId = userId;
-        this.name = name;
-        this.email = email;
-        this.phoneNumber = phoneNumber;
-        this.password = password;
-        this.userType = userType;
-        this.isApproved = isApproved;
-        this.createdDate = createdDate;
-        this.updatedDate = updatedDate;
     }
 
     public String getName() {
