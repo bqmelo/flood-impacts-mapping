@@ -9,28 +9,28 @@ public class Status {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "IdStatusValidacao")
-    private int statusId;
+    private int idStatus;
 
     @Column(name="DescricaoStatus", nullable=false)
-    private String description;
+    private String descricao;
 
     public Status() {
         super();
     }
 
-    public int getStatusId() {
-        return statusId;
+    public int getIdStatus() {
+        return idStatus;
     }
 
-    public void setStatusId(int statusId) {
-        this.statusId = statusId;
+    public void setIdStatus(int idStatus) {
+        this.idStatus = idStatus;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDescricao() {
+        return descricao;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
     }
 }
