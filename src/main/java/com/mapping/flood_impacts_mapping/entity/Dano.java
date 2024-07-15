@@ -10,34 +10,34 @@ public class Dano {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="IdDano")
+    @Column(name="id_dano")
     private int idDano;
 
     @ManyToOne
-    @JoinColumn(name = "IdAgricultor")
+    @JoinColumn(name = "id_agricultor")
     private Agricultor agricultor;
 
     @ManyToOne
-    @JoinColumn(name = "IdPlantacao")
+    @JoinColumn(name = "id_plantacao")
     private Plantacao plantacao;
 
     @ManyToOne
-    @JoinColumn(name = "IdTipoDano")
+    @JoinColumn(name = "id_tipo_dano")
     private TipoDano tipoDano;
 
-    @Column(name = "ValorEstimado", nullable = false)
+    @Column(name = "valor_estimado", nullable = false)
     private Double valorEstimado;
 
-    @Column(name = "DataOcorrencia", nullable = false)
+    @Column(name = "data_ocorrencia", nullable = false)
     private Date dataOcorrencia;
 
-    @Column(name = "Aprovado", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name = "aprovado", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean aprovado;
 
-    @Column(name = "Resolvido", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name = "resolvido", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean resolvido;
 
-    @Column(name = "DataResolucao")
+    @Column(name = "data_resolucao")
     private Date dataResolucao;
 
     public Dano() {

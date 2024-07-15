@@ -8,21 +8,21 @@ public class Plantacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="IdPlantacao")
+    @Column(name="id_plantacao")
     private int idPlantacao;
 
     @ManyToOne
-    @JoinColumn(name = "IdAgricultor")
+    @JoinColumn(name = "id_agricultor")
     private Agricultor agricultor;
 
     @ManyToOne
-    @JoinColumn(name = "IdTipoCultura")
+    @JoinColumn(name = "id_tipo_cultura")
     private TipoCultura tipoCultura;
 
-    @Column(name = "AreaPlantacao", nullable = false)
+    @Column(name = "area_plantacao", nullable = false)
     private Float areaPlantacao;
 
-    @Column(name = "Afetada", columnDefinition = "BOOLEAN DEFAULT FALSE")
+    @Column(name = "afetada", columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean afetada;
 
     public Plantacao() {

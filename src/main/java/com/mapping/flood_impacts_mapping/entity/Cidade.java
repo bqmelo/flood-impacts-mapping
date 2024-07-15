@@ -8,10 +8,10 @@ public class Cidade {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="IdCidade")
+    @Column(name="id_cidade")
     private int idCidade;
 
-    @Column(name="NomeCidade", nullable=false)
+    @Column(name="nome_cidade", nullable=false)
     private String nomeCidade;
 
     public Cidade() {
