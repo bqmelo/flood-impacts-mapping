@@ -25,8 +25,9 @@ public class Usuarios {
     @Column(name="senha", nullable=false)
     private String senha;
 
-    @Column(name="id_tipo_usuario")
-    private int idTipoUsuario;
+    @ManyToOne
+    @JoinColumn(name="id_tipo_usuario")
+    private TipoUsuario idTipoUsuario;
 
     @Column(name="aprovado", columnDefinition="BOOLEAN DEFAULT FALSE")
     private boolean aprovado;
@@ -81,11 +82,11 @@ public class Usuarios {
         this.senha = senha;
     }
 
-    public int getIdTipoUsuario() {
+    public TipoUsuario getIdTipoUsuario() {
         return idTipoUsuario;
     }
 
-    public void setIdTipoUsuario(int idTipoUsuario) {
+    public void setIdTipoUsuario(TipoUsuario idTipoUsuario) {
         this.idTipoUsuario = idTipoUsuario;
     }
 
@@ -112,22 +113,4 @@ public class Usuarios {
     public void setDataModificacao(Date dataModificacao) {
         this.dataModificacao = dataModificacao;
     }
-
-    @Override
-    public String toString() {
-        return "Usuarios{" +
-                "idUsuario=" + idUsuario +
-                ", nome='" + nome + '\'' +
-                ", email='" + email + '\'' +
-                ", telefone='" + telefone + '\'' +
-                ", senha='" + senha + '\'' +
-                ", idTipoUsuario=" + idTipoUsuario +
-                ", aprovado=" + aprovado +
-                ", dataCriacao=" + dataCriacao +
-                ", dataModificacao=" + dataModificacao +
-                '}';
-    }
 }
-
-
-

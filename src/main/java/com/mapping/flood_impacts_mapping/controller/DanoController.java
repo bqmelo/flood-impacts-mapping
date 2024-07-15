@@ -17,9 +17,19 @@ public class DanoController {
     private DanoService danoService;
 
     @GetMapping
-    public ResponseEntity<List<Dano>> getAllDanos() {
-        List<Dano> danos = danoService.getDanos();
+    public ResponseEntity<List<Dano>> getAllDanos(
+            @RequestParam(value = "agricultorId", required = false) Integer agricultorId,
+            @RequestParam(value = "isSolved", required = false) Boolean isSolved,
+            @RequestParam(value = "cultura", required = false) String cultura
+    ) {
+        List<Dano> danos = danoService.getDanos(agricultorId, isSolved, cultura);
         return new ResponseEntity<>(danos, HttpStatus.OK);
+    }
+
+    @GetMapping("danosSemSeguro")
+    public ResponseEntity<List<Dano>> getDanosSemSeguro() {
+        List<Dano> danosSemSeguro = danoService.getDanosSemSeguro();
+        return new ResponseEntity<>(danosSemSeguro, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")

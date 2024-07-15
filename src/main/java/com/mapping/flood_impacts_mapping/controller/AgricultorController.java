@@ -33,16 +33,24 @@ public class AgricultorController {
     }
 
     @PostMapping
-    public ResponseEntity<Agricultor> createAgricultor(@RequestBody Agricultor agricultor) {
-        Agricultor createdAgricultor = agricultorService.createAgricultor(agricultor);
-        return new ResponseEntity<>(createdAgricultor, HttpStatus.CREATED);
+    public ResponseEntity<Object> createAgricultor(@RequestBody Agricultor agricultor) {
+        try {
+            Agricultor createdAgricultor = agricultorService.createAgricultor(agricultor);
+            return new ResponseEntity<>(createdAgricultor, HttpStatus.CREATED);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Agricultor> updateAgricultor(@PathVariable int id, @RequestBody Agricultor agricultor) {
-        agricultor.setIdAgricultor(id);
-        Agricultor updatedAgricultor = agricultorService.updateAgricultor(agricultor);
-        return new ResponseEntity<>(updatedAgricultor, HttpStatus.OK);
+    public ResponseEntity<Object> updateAgricultor(@PathVariable int id, @RequestBody Agricultor agricultor) {
+        try {
+            agricultor.setIdAgricultor(id);
+            Agricultor updatedAgricultor = agricultorService.updateAgricultor(agricultor);
+            return new ResponseEntity<>(updatedAgricultor, HttpStatus.OK);
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
     }
 
     @DeleteMapping("/{id}")
