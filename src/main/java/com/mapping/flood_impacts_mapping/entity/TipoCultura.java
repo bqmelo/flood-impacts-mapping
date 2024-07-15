@@ -8,10 +8,10 @@ public class TipoCultura {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name = "IdTipoCultura")
+    @Column(name = "id_tipo_cultura")
     private Long idTipoCultura;
 
-    @Column(name = "Descricao", nullable=false, length=20)
+    @Column(name = "descricao", nullable=false, length=20)
     private String descricao;
 
     public TipoCultura() {

@@ -8,10 +8,10 @@ public class Status {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "IdStatusValidacao")
+    @Column(name = "id_status_validacao")
     private int idStatus;
 
-    @Column(name="DescricaoStatus", nullable=false)
+    @Column(name="descricao_status", nullable=false)
     private String descricao;
 
     public Status() {

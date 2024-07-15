@@ -10,31 +10,31 @@ public class Usuarios {
 
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="IdUsuario")
+    @Column(name="id_usuario")
     private int idUsuario;
 
-    @Column(name="Nome", nullable=false)
+    @Column(name="nome", nullable=false)
     private String nome;
 
-    @Column(name="Email", nullable=false, unique = true)
+    @Column(name="email", nullable=false, unique = true)
     private String email;
 
-    @Column(name="Telefone", nullable=false)
+    @Column(name="telefone", nullable=false)
     private String telefone;
 
-    @Column(name="Senha", nullable=false)
+    @Column(name="senha", nullable=false)
     private String senha;
 
-    @Column(name="IdTipoUsuario")
+    @Column(name="id_tipo_usuario")
     private int idTipoUsuario;
 
-    @Column(name="Aprovado", columnDefinition="BOOLEAN DEFAULT FALSE")
+    @Column(name="aprovado", columnDefinition="BOOLEAN DEFAULT FALSE")
     private boolean aprovado;
 
-    @Column(name="DataCadastro", nullable=false, updatable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    @Column(name="data_cadastro", nullable=false, updatable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private Date dataCriacao;
 
-    @Column(name="DataModificacao", nullable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Column(name="data_modificacao", nullable=false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date dataModificacao;
 
     public Usuarios() {

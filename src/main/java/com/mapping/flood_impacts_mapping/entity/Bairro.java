@@ -8,14 +8,14 @@ public class Bairro {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="IdBairro")
+    @Column(name="id_bairro")
     private int idBairro;
 
-    @Column(name="NomeBairro")
+    @Column(name="nome_bairro")
     private String nomeBairro;
 
     @ManyToOne
-    @JoinColumn(name = "IdCidade")
+    @JoinColumn(name = "id_cidade")
     private Cidade idCidade;
 
     public Bairro() {

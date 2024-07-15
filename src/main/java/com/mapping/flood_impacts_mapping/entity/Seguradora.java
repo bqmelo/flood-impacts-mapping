@@ -10,20 +10,20 @@ public class Seguradora {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="IdSeguradora")
+    @Column(name="id_seguradora")
     private int idSeguradora;
 
     @ManyToOne
-    @JoinColumn(name = "IdDano")
+    @JoinColumn(name = "id_dano")
     private Dano dano;
 
-    @Column(name = "RazaoSocial", nullable = false, length = 45)
+    @Column(name = "razao_social", nullable = false, length = 45)
     private String razaoSocial;
 
-    @Column(name = "ValorApolice", nullable = false)
+    @Column(name = "valor_apolice", nullable = false)
     private Double valorApolice;
 
-    @Column(name = "DataReavaliacao")
+    @Column(name = "data_reavaliacao")
     private Date dataReavaliacao;
 
     public Seguradora() {

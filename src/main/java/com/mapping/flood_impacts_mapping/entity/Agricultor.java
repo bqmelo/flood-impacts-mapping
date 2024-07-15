@@ -10,46 +10,46 @@ public class Agricultor {
 
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name = "IdAgricultor")
+    @Column(name = "id_agricultor")
     private int idAgricultor;
 
-    @Column(name = "CNPJ", unique = true, nullable = false, length = 18)
+    @Column(name = "cnpj", unique = true, nullable = false, length = 18)
     private String cnpj;
 
-    @Column(name = "RazaoSocial", nullable = false, length = 100)
+    @Column(name = "razao_social", nullable = false, length = 100)
     private String razaoSocial;
 
-    @Column(name = "AreaTotalPropriedade", nullable = false)
+    @Column(name = "area_total_propriedade", nullable = false)
     private Double areaTotalPropriedade;
 
-    @Column(name = "Rua", length = 45)
+    @Column(name = "rua", length = 45)
     private String rua;
 
-    @Column(name = "Numero")
+    @Column(name = "numero")
     private Integer numero;
 
-    @Column(name = "Complemento", length = 10)
+    @Column(name = "complemento", length = 10)
     private String complemento;
 
-    @Column(name = "CEP", length = 9)
+    @Column(name = "cep", length = 9)
     private String cep;
 
     @ManyToOne
-    @JoinColumn(name = "IdBairro")
+    @JoinColumn(name = "id_bairro")
     private Bairro bairro;
 
     @ManyToOne
-    @JoinColumn(name = "IdAnalistaGovernamental")
+    @JoinColumn(name = "id_analista_governamental")
     private Usuarios idAnalistaGovernamental;
 
-    @Column(name = "DataValidacao")
+    @Column(name = "data_validacao")
     private Date dataValidacao;
 
-    @Column(name = "DataModificacao", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
+    @Column(name = "data_modificacao", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
     private Date dataModificacao;
 
     @ManyToOne
-    @JoinColumn(name = "IdStatusValidacao")
+    @JoinColumn(name = "id_status_validacao")
     private Status idStatusValidacao;
 
     public Agricultor() {
