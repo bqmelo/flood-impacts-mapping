@@ -3,7 +3,7 @@ package com.mapping.flood_impacts_mapping.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name="platacoes")
+@Table(name="plantacoes")
 public class Plantacao {
 
     @Id
