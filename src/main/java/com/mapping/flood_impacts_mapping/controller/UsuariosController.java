@@ -24,7 +24,6 @@ public class UsuariosController {
             users = usuariosService.getAllUsers();
         }
         catch (Exception e) {
-            e.getMessage();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(users, HttpStatus.OK);
@@ -37,45 +36,32 @@ public class UsuariosController {
             usuarios = usuariosService.getUserById(userId);
         }
         catch (Exception e) {
-            e.printStackTrace();
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
         return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<Usuarios> addUser(@RequestBody Usuarios user) {
+    public ResponseEntity<Object> addUser(@RequestBody Usuarios user) {
         Usuarios usuarios;
         try {
             usuarios = usuariosService.addUser(user);
+            return new ResponseEntity<>(usuarios, HttpStatus.OK);
         }
         catch (Exception e) {
-            e.getMessage();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
-        return new ResponseEntity<>(usuarios, HttpStatus.OK);
     }
 
     @PutMapping("/update/{userId}")
-    public ResponseEntity<Usuarios> updateUser(@PathVariable("userId") int userId, @RequestBody Usuarios user) {
-        Usuarios existingUser = usuariosService.getUserById(userId);
-        if (existingUser == null) {
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }
-        existingUser.setNome(user.getNome());
-        existingUser.setEmail(user.getEmail());
-        existingUser.setSenha(user.getSenha());
-        existingUser.setTelefone(user.getTelefone());
-        existingUser.setAprovado(user.getAprovado());
-        existingUser.setDataModificacao(new Date());
-
+    public ResponseEntity<Object> updateUser(@PathVariable("userId") int userId, @RequestBody Usuarios user) {
         Usuarios savedUser;
         try {
-            savedUser = usuariosService.updateUser(existingUser);
+            user.setIdUsuario(userId);
+            savedUser = usuariosService.updateUser(user);
         }
         catch (Exception e) {
-            e.printStackTrace();
-            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
         return new ResponseEntity<>(savedUser, HttpStatus.OK);
     }

@@ -9,7 +9,6 @@ import java.util.Date;
 public class Agricultor {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id_agricultor")
     private int idAgricultor;
 
@@ -41,12 +40,6 @@ public class Agricultor {
     @ManyToOne
     @JoinColumn(name = "id_analista_governamental")
     private Usuarios idAnalistaGovernamental;
-
-    @Column(name = "data_validacao")
-    private Date dataValidacao;
-
-    @Column(name = "data_modificacao", columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP")
-    private Date dataModificacao;
 
     @ManyToOne
     @JoinColumn(name = "id_status_validacao")
@@ -134,22 +127,6 @@ public class Agricultor {
 
     public void setIdAnalistaGovernamental(Usuarios idAnalistaGovernamental) {
         this.idAnalistaGovernamental = idAnalistaGovernamental;
-    }
-
-    public Date getDataValidacao() {
-        return dataValidacao;
-    }
-
-    public void setDataValidacao(Date dataValidacao) {
-        this.dataValidacao = dataValidacao;
-    }
-
-    public Date getDataModificacao() {
-        return dataModificacao;
-    }
-
-    public void setDataModificacao(Date dataModificacao) {
-        this.dataModificacao = dataModificacao;
     }
 
     public Status getIdStatusValidacao() {
