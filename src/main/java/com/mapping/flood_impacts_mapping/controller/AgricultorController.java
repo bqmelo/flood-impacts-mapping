@@ -17,8 +17,11 @@ public class AgricultorController {
     AgricultorService agricultorService;
 
     @GetMapping
-    public ResponseEntity<List<Agricultor>> getAllAgricultores() {
-        List<Agricultor> agricultores = agricultorService.getAllAgricultores();
+    public ResponseEntity<List<Agricultor>> getAllAgricultores(
+            @RequestParam(value = "razaoSocial", required = false) String razaoSocial
+    ) {
+        List<Agricultor> agricultores = agricultorService
+                .getAllAgricultores(razaoSocial);
         return new ResponseEntity<>(agricultores, HttpStatus.OK);
     }
 
