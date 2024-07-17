@@ -1,6 +1,6 @@
 # Flood Impacts Mapping API
 
-This project is a web application developed using Spring Boot and Java 17.
+This project was developed using Spring Boot and Java 17.
 
 ## Prerequisites
 To run this project locally, you need to have:
